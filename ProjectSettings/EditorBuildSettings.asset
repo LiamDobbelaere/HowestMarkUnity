@@ -6,5 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 81ca49908baf9a44594c3afa2da493ef
+  - enabled: 1
     path: Assets/Scenes/BallMark.unity
     guid: 5b6c94393fa76d842940dee5fe409dcb
+  - enabled: 1
+    path: Assets/Scenes/BallMark3D.unity
+    guid: bda2fe5dcada64e469270f5f3077f04b

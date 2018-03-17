@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour {
+public class Spawner3D : MonoBehaviour {
     public GameObject ball;
 
-    private int force = 1;
+    private float force = 0.5f;
     private int count = 0;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -19,11 +19,11 @@ public class Spawner : MonoBehaviour {
 
         for (int i = 0; i < 2; i++)
         {
-            var b = Instantiate(ball, transform.position, Quaternion.identity);
-            b.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0));
+            var b = Instantiate(ball, transform.position + new Vector3(-force, 0f , 0f), Quaternion.identity);
+            b.GetComponent<Rigidbody>().AddForce(new Vector3(force, 0, -force), ForceMode.Impulse);
             force *= -1;
 
             count += 1;
         }
-	}
+    }
 }
