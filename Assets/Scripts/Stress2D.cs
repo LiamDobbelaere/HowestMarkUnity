@@ -7,6 +7,7 @@ public class Stress2D : MonoBehaviour {
 
     private Camera camera;
     private int count = 0;
+    private int conditionCount = 0;
 
     // Use this for initialization
     void Start () {
@@ -15,7 +16,9 @@ public class Stress2D : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(string.Format("{0}, {1}", count, 1 / Time.deltaTime));
+        float fps = 1 / Time.deltaTime;
+
+        Debug.Log(string.Format("{0}, {1}", count, fps));
 
         for (int i = 0; i < 25; i++)
         {
@@ -27,5 +30,8 @@ public class Stress2D : MonoBehaviour {
             count += 1;
         }
 
+        if (fps < 60.0f) conditionCount++;
+        else conditionCount = 0;
+        if (conditionCount > 60) Application.Quit();
     }
 }

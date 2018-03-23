@@ -18,6 +18,18 @@ public class Menu : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        //Automated mode
+        string[] args = System.Environment.GetCommandLineArgs();
+        for (int i = 0; i < args.Length; i++)
+        {
+            if (args[i].StartsWith("-test"))
+            {
+                string scene = args[i].Split('=')[1];
+
+                SceneManager.LoadScene(scene, LoadSceneMode.Single);
+            }
+        }
+
         textComponent = GetComponent<Text>();
 
         for (int x = 0; x < OPTIONS.Count; x++)
@@ -96,5 +108,6 @@ public class Menu : MonoBehaviour {
         {
             SceneManager.LoadScene(OPTIONS[index], LoadSceneMode.Single);
         }
+
 	}
 }
