@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Stress2D : MonoBehaviour {
     public GameObject box;
@@ -18,7 +19,7 @@ public class Stress2D : MonoBehaviour {
 	void Update () {
         float fps = 1 / Time.deltaTime;
 
-        Debug.Log(string.Format("{0}, {1}", count, fps));
+        Debug.Log(string.Format("bench {0}, {1}", count, fps));
 
         for (int i = 0; i < 25; i++)
         {

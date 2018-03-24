@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour {
 	void Update () {
         float fps = 1 / Time.deltaTime;
 
-        Debug.Log(string.Format("{0}, {1}", count, fps));
+        Debug.Log(string.Format("bench {0}, {1}", count, fps));
 
         for (int i = 0; i < 2; i++)
         {
