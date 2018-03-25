@@ -17,3 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stress2D.unity
     guid: 23aa11a93ca142241a2467495ed98dca
+  - enabled: 1
+    path: Assets/Scenes/BoxMark.unity
+    guid: 4e6c00cc6575d744d915863c711c0a0f
+  - enabled: 1
+    path: Assets/Scenes/PolyMark.unity
+    guid: b975231977a83fe4aafd862eaeea69a1
+  - enabled: 1
+    path: Assets/Scenes/BoxMark3D.unity
+    guid: d066544db714bde4ab9920bbd82ae149
