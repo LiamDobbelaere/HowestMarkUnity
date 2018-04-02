@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Stopwatch = System.Diagnostics.Stopwatch;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,6 +19,11 @@ public class Menu : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Chronometer c = new Chronometer();
+        c.Start();
+        System.Threading.Thread.Sleep(1000);
+        Debug.Log(c.Stop());
+
         //Automated mode
         string[] args = System.Environment.GetCommandLineArgs();
         for (int i = 0; i < args.Length; i++)
