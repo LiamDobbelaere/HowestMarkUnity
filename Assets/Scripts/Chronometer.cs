@@ -20,6 +20,6 @@ public class Chronometer {
     {
         stopwatch.Stop();
 
-        return stopwatch.ElapsedTicks * 1000000 / Stopwatch.Frequency;
+        return stopwatch.ElapsedMilliseconds;// * 1000000 / Stopwatch.Frequency;
     }
 }

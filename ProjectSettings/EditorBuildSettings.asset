@@ -32,3 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stress3DUnlit.unity
     guid: 28ae97c9ab6ac1e429e1a0a42ad395bc
+  - enabled: 1
+    path: Assets/Scenes/ZylannMicroHM.unity
+    guid: 4a300a08a0f245549b17edac41b9a98c

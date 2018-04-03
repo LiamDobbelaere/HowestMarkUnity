@@ -291,6 +291,7 @@
     <Compile Include="Assets\Scripts\Spawner3D.cs" />
     <Compile Include="Assets\Scripts\Stress2D.cs" />
     <Compile Include="Assets\Scripts\Stress3D.cs" />
+    <Compile Include="Assets\Scripts\ZylannMicroHM.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
