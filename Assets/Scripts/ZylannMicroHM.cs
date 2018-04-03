@@ -20,22 +20,22 @@ public class ZylannMicroHM : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        float vtest_while_loop = 0;
-        float vtest_empty_func = 0;
-        float vtest_increment = 0;
-        float vtest_increment_x5 = 0;
-        float vtest_increment_with_member_var = 0;
-        float vtest_increment_with_local_outside_loop = 0;
-        float vtest_increment_with_local_inside_loop = 0;
-        float vtest_increment_vector2 = 0;
-        float vtest_increment_vector3 = 0;
-        float vtest_increment_vector3_constant = 0;
-        float vtest_increment_vector3_individual_xyz = 0;
-        float vtest_unused_local = 0;
-        float vtest_divide = 0;
-        float vtest_increment_with_array_member = 0;
-        float vtest_if_true = 0;
-        float vtest_if_true_else = 0;
+        float vtest_while_loop = 0.0f;
+        float vtest_empty_func = 0.0f;
+        float vtest_increment = 0.0f;
+        float vtest_increment_x5 = 0.0f;
+        float vtest_increment_with_member_var = 0.0f;
+        float vtest_increment_with_local_outside_loop = 0.0f;
+        float vtest_increment_with_local_inside_loop = 0.0f;
+        float vtest_increment_vector2 = 0.0f;
+        float vtest_increment_vector3 = 0.0f;
+        float vtest_increment_vector3_constant = 0.0f;
+        float vtest_increment_vector3_individual_xyz = 0.0f;
+        float vtest_unused_local = 0.0f;
+        float vtest_divide = 0.0f;
+        float vtest_increment_with_array_member = 0.0f;
+        float vtest_if_true = 0.0f;
+        float vtest_if_true_else = 0.0f;
 
         var avg_count = 0;
         while (avg_count < AVG_TIMES) {
