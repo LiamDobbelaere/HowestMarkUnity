@@ -9,12 +9,23 @@ public class Stress3D : MonoBehaviour {
     private int count = 0;
     private int conditionCount = 0;
 
-    private float extents = 5.0f;
+    private Camera camera;
+
+    private float distance = 18f * 2f; //2.695f;
+    private float frustum_height;
+    private float frustum_width;
 
     // Use this for initialization
     void Start()
     {
+        camera = Camera.main;
 
+        var aspect = 1024f / 768f;
+        frustum_height = 2.0f * distance * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad);
+        frustum_width = frustum_height * aspect;
+
+        Debug.Log(frustum_width);
+        Debug.Log(frustum_height);
     }
 
     // Update is called once per frame
@@ -26,9 +37,11 @@ public class Stress3D : MonoBehaviour {
 
         for (int i = 0; i < 25; i++)
         {
-            Vector3 position = new Vector3(transform.position.x + Random.Range(-extents, extents),
-                transform.position.y + Random.Range(-extents, extents), transform.position.z + Random.Range(-extents, extents));
+            float rand_width = Random.Range(-frustum_width * 0.5f, frustum_width * 0.5f);
+            float rand_height = Random.Range(-frustum_height * 0.5f, frustum_height * 0.5f);
 
+            Vector3 position = new Vector3(rand_width, rand_height, distance);
+            
             Instantiate(stamp, position, Quaternion.identity);
 
             count += 1;
