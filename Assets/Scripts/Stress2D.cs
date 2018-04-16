@@ -10,9 +10,13 @@ public class Stress2D : MonoBehaviour {
     private int count = 0;
     private int conditionCount = 0;
 
+    private float aspect;
+
     // Use this for initialization
     void Start () {
         camera = Camera.main;
+
+        aspect = 1024f / 768f;
 	}
 	
 	// Update is called once per frame
@@ -23,7 +27,7 @@ public class Stress2D : MonoBehaviour {
 
         for (int i = 0; i < 25; i++)
         {
-            Vector3 position = new Vector3(camera.transform.position.x + Random.Range(-camera.orthographicSize, camera.orthographicSize),
+            Vector3 position = new Vector3(camera.transform.position.x + Random.Range(-camera.orthographicSize * aspect, camera.orthographicSize * aspect),
                 camera.transform.position.y + Random.Range(-camera.orthographicSize, camera.orthographicSize), 0f);
 
             Instantiate(box, position, Quaternion.identity);

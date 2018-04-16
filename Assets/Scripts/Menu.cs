@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour {
     private const string COLOR_YELLOW = "#fff200";
     private const string COLOR_BLUE = "#44c8f4";
 
-    private readonly List<string> OPTIONS = new List<string> { "[Physics 2D]", "BallMark", "BoxMark", "PolyMark", "[Physics 3D]", "BallMark3D", "BoxMark3D", "[Rendering]", "Stress2D", "Stress3D", "Stress3DUnlit", "[Logic]", "ZylannMicroHM" };
+    private readonly List<string> OPTIONS = new List<string> { "[Physics 2D]", "BallMark", "BoxMark", "PolyMark", "[Physics 3D]", "BallMark3D", "BoxMark3D", "PolyMark3D", "[Rendering]", "Stress2D", "Stress3D", "Stress3DUnlit", "[Logic]", "ZylannMicroHM" };
     private List<int> untouchable = new List<int>();
 
     private int index = -1;

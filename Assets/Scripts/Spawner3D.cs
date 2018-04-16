@@ -9,15 +9,9 @@ public class Spawner3D : MonoBehaviour {
     private int count = 0;
     private int conditionCount = 0;
 
-    private float distance = 2.695f;
-    private float frustum_height;
-    private float frustum_width;
-
     // Use this for initialization
     void Start () {
-        var aspect = 1024f / 768f;
-        frustum_height = 2.0f * -distance * Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
-        frustum_width = frustum_height * aspect;
+
     }
 
     // Update is called once per frame
