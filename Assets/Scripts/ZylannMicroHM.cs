@@ -7,7 +7,7 @@ public class ZylannMicroHM : MonoBehaviour {
     private const float AVG_TIMES = 10.0f;
 
     private Chronometer chronometer = new Chronometer();
-    private long whileTime;
+    private long forTime;
 
     /* Stuff used for tests { */
     private int memberVar = 1;
@@ -20,7 +20,7 @@ public class ZylannMicroHM : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        float vtest_while_loop = 0.0f;
+        float vtest_for_loop = 0.0f;
         float vtest_empty_func = 0.0f;
         float vtest_increment = 0.0f;
         float vtest_increment_x5 = 0.0f;
@@ -39,7 +39,7 @@ public class ZylannMicroHM : MonoBehaviour {
 
         var avg_count = 0;
         while (avg_count < AVG_TIMES) {
-            vtest_while_loop += test_while_loop();
+            vtest_for_loop += test_for_loop();
             vtest_empty_func += test_empty_func();
             vtest_increment += test_increment();
             vtest_increment_x5 += test_increment_x5();
@@ -58,7 +58,7 @@ public class ZylannMicroHM : MonoBehaviour {
             avg_count += 1;
         }
 
-        vtest_while_loop /= AVG_TIMES;
+        vtest_for_loop /= AVG_TIMES;
         vtest_empty_func /= AVG_TIMES;
         vtest_increment /= AVG_TIMES;
         vtest_increment_x5 /= AVG_TIMES;
@@ -75,7 +75,7 @@ public class ZylannMicroHM : MonoBehaviour {
         vtest_if_true /= AVG_TIMES;
         vtest_if_true_else /= AVG_TIMES;
 
-        Debug.Log(string.Format("bench test_while_loop, {0}", vtest_while_loop));
+        Debug.Log(string.Format("bench test_for_loop, {0}", vtest_for_loop));
         Debug.Log(string.Format("bench test_empty_func, {0}", vtest_empty_func));
         Debug.Log(string.Format("bench test_increment, {0}", vtest_increment));
         Debug.Log(string.Format("bench test_increment_x5, {0}", vtest_increment_x5));
@@ -96,32 +96,29 @@ public class ZylannMicroHM : MonoBehaviour {
     }
 
     //-------------------------------------------------------------------------------
-    private long test_while_loop()
+    private long test_for_loop()
     {
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
-            i += 1;
+
         }
 
-        whileTime = chronometer.Stop();
+        forTime = chronometer.Stop();
 
-        return whileTime;
+        return forTime;
     }
     //-------------------------------------------------------------------------------
     private long test_empty_func () {
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             EmptyVoidFunction();
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
     //-------------------------------------------------------------------------------
     private long test_increment()
@@ -130,13 +127,12 @@ public class ZylannMicroHM : MonoBehaviour {
 
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS) {
+        for (int i = 0; i < ITERATIONS; i++)
+        {
             a += 1;
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
 
@@ -147,18 +143,16 @@ public class ZylannMicroHM : MonoBehaviour {
 
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             a += 1;
             a += 1;
             a += 1;
             a += 1;
             a += 1;
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -168,13 +162,12 @@ public class ZylannMicroHM : MonoBehaviour {
 
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS) {
+        for (int i = 0; i < ITERATIONS; i++)
+        {
             a += memberVar;
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -185,14 +178,12 @@ public class ZylannMicroHM : MonoBehaviour {
 
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             a += b;
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -202,15 +193,13 @@ public class ZylannMicroHM : MonoBehaviour {
 
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             var b = 1;
             a += b;
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -221,14 +210,12 @@ public class ZylannMicroHM : MonoBehaviour {
 
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             a += b;
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -239,14 +226,12 @@ public class ZylannMicroHM : MonoBehaviour {
 
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             a += b;
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -256,13 +241,12 @@ public class ZylannMicroHM : MonoBehaviour {
 
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS) {
+        for (int i = 0; i < ITERATIONS; i++)
+        {
             a += new Vector3(1, 1, 1);
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -273,15 +257,14 @@ public class ZylannMicroHM : MonoBehaviour {
 
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             a.x += b.x;
             a.y += b.y;
             a.z += b.z;
-            i += 1;
         }
-        return chronometer.Stop() - whileTime;
+
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -289,14 +272,12 @@ public class ZylannMicroHM : MonoBehaviour {
     {
         chronometer.Start();
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             var b = 1;
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -306,14 +287,12 @@ public class ZylannMicroHM : MonoBehaviour {
 
         var a = 9999.0;
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             a /= 1.01;
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
@@ -323,40 +302,34 @@ public class ZylannMicroHM : MonoBehaviour {
         var a = 0;
         int[] arr = { 1 };
 
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             a += arr[0];
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
     private long test_if_true()
     {
         chronometer.Start();
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             if (true)
             {
 
             }
-
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 
     //-------------------------------------------------------------------------------
     private long test_if_true_else()
     {
         chronometer.Start();
-        var i = 0;
-        while (i < ITERATIONS)
+        for (int i = 0; i < ITERATIONS; i++)
         {
             if (true)
             {
@@ -366,10 +339,8 @@ public class ZylannMicroHM : MonoBehaviour {
             {
 
             }
-
-            i += 1;
         }
 
-        return chronometer.Stop() - whileTime;
+        return chronometer.Stop() - forTime;
     }
 }
